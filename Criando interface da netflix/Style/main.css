@@ -1,0 +1,124 @@
+:root{ /* faz com que vc use variáveis, ou seja, não terás que escrever a cor várias vezes, basta somente colocar o var(--nome da cor que vc escolheu como variável) */
+    --vermelho:#E50914;
+    --preta:#141414;
+}
+
+
+*{  /* o "*" = serve pra todo o documento, todo class e afins*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* faz com quê todo elemento que esteja dentro não ultrapasse a borda da caixa, ou da <div> e afins */
+
+}
+
+/*elementos base*/
+
+body{
+    background: var(--preta);
+    font-family: 'Times New Roman', Times, serif;  
+    color: white;  /* faz com que todo elemento filho mude de cor */
+}
+
+header .container{ /* faz com que mude apenas os elementos que estão dentro da class container na tag <header> */
+    /*margin-left: 5px;*/  /* faz com que dê um espaço da parede esquerda  */
+    display: flex;
+    flex-direction:row ;
+    align-items: center; /* faz com que os itens fiquem centralizados */
+    justify-content: space-between; /* faz com que o nome que está dentro do <h2> fique de um lado e os itens que estão dentro de <nav> (menu) fiquem do outro lado da página */
+    /*border: 1px solid black;  //use como exemplo pra ver o tamanho de sua <div> ou caixa   */
+}
+
+header .logo{
+    color: var(--vermelho);
+    font-family: 'Arial Black', times; /* escolhe qual fonte do texto escolhido */
+    font-size: 40px; /* faz com quê o tamanho do texto escolhido aumente */
+}
+
+header nav a{
+    text-decoration: none; /* faz com remova qualquer decoração no texto, nesse caso removerá as linhas que estão no texto */
+    color: #AAA; /* muda a cor da fonte */
+    margin-right: 10px; /* faz com quê dê margem a cada título, exemplo="Início Series" (sem a margem), "Início      Séries" (com a margem) */
+}
+
+header nav a:hover{ /* faz com que quando eu passe o mouse o elemento mude de cor */
+    color: #fff;
+}
+
+/*filme principal*/ 
+.filme-principal{
+    font-size: 16px; /* faz com que toda <div> aumente */
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('../img/cap-house.jpg'); /* o linear gradiente faz com que a foto torne a cor que vc colocar no rgba, nesse caso foi um degradê leve */
+    height: 400px; /* faz com que a imagem oculpe 400px da tela de cima pra baixo e assim aumentando a caixa <div> */
+    background-size: cover; /* faz com que a imagem cubra toda a caixa da largura do site <div>   */
+    display: flex;
+    flex-direction: column; /* faz com que toda a exibição dessa div fique em coluna, ne vertical */ 
+    justify-content: center; /* faz com que toda informação fique no centro da caixa<div> */
+    align-items: flex-start; /* faz com que os itens comece na esquerda dentro da caixa <div> */
+}
+
+.filme-principal .descricao{ /* a class final sempre o que vai valer, nesse caso é a descricao */
+    margin-top: 10px; 
+    margin-bottom: 40px;
+}
+
+.titulo{
+    margin-top: 15%;
+    font-size: 40px; /* faz com que o texto aumente de tamanho */
+    font-family: 'Arial' , times, serif;
+    
+    
+}
+
+.botao{
+    background-color:rgba(0, 0, 0, .50); /* te dá um tom transparente, nesse caso nos botões */
+    border: none; /* faz com que tire todos os valores da borda */
+    color: white;
+
+    padding:15px; /* faz com que aumente todos os lados de um determinado item que você escolher. neste caso o botão */
+    margin-right: 15px;
+    font-size: 12px;
+
+    cursor: pointer; /* faz com quê seu cursor mouse vire uma mão indicando um link */
+    transition: .5s ease all; /* importante!!! faz com quê ao colocar o cursor mouse o o botão tenha trasação */
+}
+
+.botao:hover{ /* faz com quê quando passe o cursor mouse o butão mude de cor */
+    background-color: white; /* a cor do elemento no geral */
+    color: black; /* a cor das letras */
+}
+
+.botao i{ /* usado pra afastar o ícone pego no fontawersome do nome dentro do butão  */
+    margin-right: 8px;
+}
+
+.container{
+    margin-left: 20px;
+}
+
+main .container{ /* oide usar a tap <main> ou a class .filme-principal, ele vai ter o mesmo objetivo */ 
+    width: 70%; /* faz com que tudo que esteja dentro dessa caixa tenha um limete na parte vertical e não passe disso, nesse caso ele dá limite ai texto */
+}
+
+
+.box-filme{
+    height: 100%; /* faz com que a imagem apareça em seu tamanho original */
+    width: 100%;
+    display: block;
+}
+
+.box-filme{
+    cursor: pointer;
+}
+
+.descricao{
+    margin-right: 50%;
+}
+
+.carrosel-filme{
+    margin-top: 10px;
+}
+
+
+/*class="wrapper" = faz com que vc envelope todos os itens que estão dentro da div, faz com quê facilite o uso delas configurando assim no css tudo que há dentro dela de uma vez só, e não um de cada vez   */
+/* uma div que está dentro de outra div dignifica dizer que há uma caixa detnro de outra caixa */
+/* quando se coloca uma tag pai, seja ela Div, tag, header, main, etc, quando coloca uma class nela no CSS vc sempre irá digitar primeiro a tag pai depois a class, exemplo: "header .container{" = usei de exemplo a primeira class desse código */
